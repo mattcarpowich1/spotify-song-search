@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lucida Grande', sans-serif;
+  color: #eaeaea;
+  background-color: #FB818D;
+}
+
+nav {
+  margin: 0 auto;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: calc((16px * (100vw - 320px)/(960-320)) - 8px);
+  background-color: #fff;
+  z-index: 5;
+}
+
+input {
+  border: none;
+  height: 95%;
+  width: 80vw;
+  max-width: 400px;
+  font-family: 'Lucida Grande', sans-serif;
+  text-indent: calc((24px + (20px + (20 - 16) * (100vw - 320px)/(960-320))) - 3px);
+  font-size: calc(20px + (20 - 16) * (100vw - 320px)/(960-320));
+  outline: none;
+}
+
+input[type='text'] {
+  color: #F95F6E;
+}
+
+.search {
+  position: relative;
+  height: calc((40px + (40 - 24) * (100vw - 320px)/(960-320)) - 8px);
+}
+
+.fa.fa-search {
+  position: absolute;
+  color: #141617;
+  font-size: calc(20px + (20 - 16) * (100vw - 320px)/(960-320));
+  top: calc(((((40px + (40 - 24) * (100vw - 320px)/(960-320)) - 8px) / 2) - ((20px + (20 - 16) * (100vw - 320px)/(960-320))) / 2) + 0px);
+  left: 12px;
+}
+
+.search-results {
+  position: absolute;
+  margin-top: 0px;
+  background-color: rgba(34, 34, 34, .9);
+  left: calc((24px + (20px + (20 - 16) * (100vw - 320px)/(960-320))) - 6px);
+  min-width: 240px;
+  width: 80vw;
+  max-width: 400px;
+  display: none;
+  z-index: 10;
+}
+
+.show {
+  display: block;
+}
+
+.search-results li {
+  padding-left: 4px;
+  padding-right: 4px;
+  border-bottom: 1px solid #515151;
+  height: calc((40px + (40 - 24) * (100vw - 320px)/(960-320)) - 8px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all .1s ease-out;
+  font-size: calc(20px + (20 - 16) * (100vw - 320px)/(960-320));
+  overflow-x: hidden;
+}
+
+.song-artist {
+  color: #6ED6C8;
+}
+
+.search-result .song-name,
+.search-result .song-artist {
+  font-size: 16px;
+  white-space: nowrap;
+  margin-left: 4px;
+}
+
+.search-results li img {
+  height: 24px;
+  width: 24px;
+}
+
+.search-results li:hover {
+  cursor: pointer;
+  background-color: #907FDD;
+  transition: all .1s ease-out;
+}
+
+main {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+section.playlist-outer {
+  position: relative;
+  margin: 0 auto;
+  width: calc(100vw - 48px);
+  height: calc(100vh - 128px);
+  margin-top: 24px;
+  padding: 16px;
+}
+
+.playlist-outer h1 {
+  font-size: calc(48px + (48 - 24) * (100vw - 320px)/(960-320));
+  color: #141617;
+  padding-bottom: 12px;
+}
+
+.playlist li {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16px;
+}
+
+.playlist li {
+  border-bottom: 1px solid #141617;
+  transition: all .1s ease;
+}
+
+.playlist li:hover {
+  background: rgba(256, 256, 256, .2);
+  cursor: pointer;
+  transition: all .1s ease;
+}
+
+.playlist-song-name {
+  color: #141617;
+}
+
+.playlist-song-artist {
+  color: #141617;
+}
+
+.new-song {
+  animation-name: fader;
+  animation-duration: .3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fader {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
