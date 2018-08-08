@@ -26,7 +26,7 @@ class App extends Component {
       const currentSearch = this.state.search
       if (currentSearch !== '') {
         if (currentSearch !== search) {
-          post('http://localhost:3001/api/search', {
+          post('/api/search', {
             value: currentSearch
           })
           .then(res => {
